@@ -1,5 +1,5 @@
-from os.path import dirname
-from os.path import join
+from os.path import dirname, join
+
 import setuptools
 
 
@@ -14,14 +14,14 @@ def readme() -> str:
 
 
 setuptools.setup(
-    name="streamlit-drawable-canvas",
-    version="0.9.4",
-    author="Fanilo ANDRIANASOLO",
-    author_email="contact@andfanilo.com",
-    description="A Streamlit custom component for a free drawing canvas using Fabric.js.",
+    name="streamlit-drawable-canvas-fix",
+    version="0.9.6",
+    author="Andreas Bauer",
+    author_email="Andreas.Bauer2@gmx.net",
+    description="Fix of orignal streamlit-drawable-canvas for new streamlit versions.",
     long_description=readme(),
     long_description_content_type="text/markdown",
-    url="https://github.com/andfanilo/streamlit-drawable-canvas",
+    url="https://github.com/AndreasBauerGit/streamlit-drawable-canvas-fix",
     packages=setuptools.find_packages(),
     include_package_data=True,
     classifiers=[],
@@ -29,6 +29,6 @@ setuptools.setup(
     install_requires=[
         "Pillow",
         "numpy",
-        "streamlit >= 0.63",
-    ]
+        "streamlit >= 1.40.0",
+    ],
 )

@@ -1,8 +1,7 @@
 # Streamlit - Drawable Canvas
 
 ---
-
-This project is [unmaintained](https://www.youtube.com/watch?v=1RFJF_ETpLk). 
+ Fix for newer Streamlit verisons.
 
  Please add a thumbs up [HERE](https://github.com/streamlit/streamlit/issues/875) if you wish to see a native implementation.
 
@@ -32,7 +31,7 @@ Streamlit component which provides a sketching canvas using [Fabric.js](http://f
 ## Installation
 
 ```shell script
-pip install streamlit-drawable-canvas
+pip install streamlit-drawable-canvas-fix
 ```
 
 ## Example Usage

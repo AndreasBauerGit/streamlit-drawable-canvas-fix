@@ -7,7 +7,7 @@ from hashlib import md5
 import numpy as np
 import streamlit as st
 import streamlit.components.v1 as components
-import streamlit.elements.image_utils as image_to_url
+import streamlit.elements.lib.image_utils as image_to_url
 from PIL import Image
 
 _RELEASE = True  # on packaging, pass this to True
@@ -123,9 +123,16 @@ def st_canvas(
         background_image = _resize_img(background_image, height, width)
         # Reduce network traffic and cache when switch another configure, use streamlit in-mem filemanager to convert image to URL
         background_image_url = image_to_url(
-            background_image, width, True, "RGB", "PNG", f"drawable-canvas-bg-{md5(background_image.tobytes()).hexdigest()}-{key}" 
+            background_image,
+            width,
+            True,
+            "RGB",
+            "PNG",
+            f"drawable-canvas-bg-{md5(background_image.tobytes()).hexdigest()}-{key}",
         )
-        background_image_url = st._config.get_option("server.baseUrlPath") + background_image_url
+        background_image_url = (
+            st._config.get_option("server.baseUrlPath") + background_image_url
+        )
         background_color = ""
 
     # Clean initial drawing, override its background color
